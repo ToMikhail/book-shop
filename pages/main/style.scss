@@ -1,0 +1,245 @@
+@import url(../../style/fonts.css);
+
+$font-size: 1rem;
+$font-color: rgb(43, 43, 43);
+
+html {
+  font-size: $font-size;
+  color: $font-color;
+  font-family: "Roboto", sans-serif;
+}
+
+.popup-info {
+  display: none;
+}
+
+.popup-info.visible {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  overflow: auto;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.4);
+
+  .popup-wrapper {  
+      position: relative;
+      max-width: 500px;
+      height: auto;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #fefefe;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      animation-name: animation-top;
+      animation-duration: 0.4s;
+  }
+
+  .popup-text {
+      padding: 40px;
+  }
+}
+
+.wrapper {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(249, 249, 249);
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1fr 4fr;
+  background-color: rgb(216, 215, 215);
+}
+
+
+.img-header {
+  width: 300px;
+  height: 100%;
+  background-image: url(../../assets/images/oldLibrary.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.heading {
+  width: calc(100% - 300px);
+  height: auto;
+  font-family: "Macondo", sans-serif;
+  text-align: center;
+  color: darkgoldenrod;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: grey;
+  gap: 40px;
+}
+
+
+.catalog {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  background: lightblue;
+}
+
+.books-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.book-item {
+  display: flex;
+  gap: 20px;
+
+  .card-item-img {
+      width: 185px;
+      height: auto;
+  }
+
+  .btn-more-info {
+      cursor: pointer;
+  }
+
+  .btn-add {
+      width: 140px;
+      background-color: #3dd1e7;
+      border: 0 solid #e5e7eb;
+      box-sizing: border-box;
+      color: #000000;
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      justify-content: center;
+      line-height: 1.75rem;
+      padding: 0.75rem 1.65rem;
+      position: relative;
+      text-align: center;
+      text-decoration: none #000000 solid;
+      text-decoration-thickness: auto;
+      max-width: 140px;
+      position: relative;
+      cursor: pointer;
+      transform: rotate(-2deg);
+      user-select: none;
+      touch-action: manipulation;
+      transition: .3s;
+  }
+
+  .btn-add:focus {
+      outline: 0;
+  }
+
+  .btn-add:after {
+      content: "";
+      position: absolute;
+      border: 1px solid #000000;
+      bottom: 4px;
+      left: 4px;
+      width: calc(100% - 1px);
+      height: calc(100% - 1px);
+  }
+
+  .btn-add:hover:after {
+      bottom: 2px;
+      left: 2px;
+  }
+
+  .btn-add:active {
+      background-color: #21aec4;
+  }
+
+  @media (min-width: 768px) {
+      .button-53 {
+          padding: 0.75rem 3rem;
+          font-size: 1.25rem;
+      }
+  }
+}
+
+.card-item-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.basket {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  background: lightpink;
+}
+
+.bookItem {
+  background-color: aqua;
+}
+
+.btn-close {
+  color: grey;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .order-item {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .book-price-invisible {
+          display: none;
+      }
+
+      .order-item-img {
+          width: 185px;
+          height: auto;
+      }
+      
+      .order-item-content {
+          width: 60%;
+      }
+  }
+
+  .btn-close {
+      position: relative;
+      top: -100px;
+      right: 0;
+  }
+}
+
+@keyframes animation-top {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
