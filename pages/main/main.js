@@ -23,10 +23,11 @@ const heading = document.createElement("h1");
 heading.className = "heading";
 heading.textContent = "You are welcome to our BookStore!";
 
-const imgHead = document.createElement("img");
-imgHead.className = "img img-header";
+// const imgHead = document.createElement("img");
+// imgHead.className = "img img-header";
 
-header.append(imgHead, heading);
+// header.append(imgHead, heading);
+header.append(heading);
 
 // main
 const main = document.createElement("main");
@@ -83,6 +84,11 @@ basketTitle.textContent = "Order books";
 const orderList = document.createElement("div");
 orderList.className = "order-list";
 
+const confirmLink = document.createElement("a");
+confirmLink.className = "confirm-link";
+confirmLink.href = "../form/form.html";
+confirmLink.setAttribute('href', "../form/form.html")
+console.log('confirmLink.href: ', confirmLink.href);
 const confirmBtn = document.createElement("button");
 confirmBtn.className = "btn-confirm";
 confirmBtn.textContent = "Confirm order";
@@ -93,7 +99,9 @@ const confirmation = document.createElement("div");
 confirmation.className = "confirmation";
 
 basket.append(basketTitle, orderList, confirmation);
-confirmation.append(totalDiv, confirmBtn);
+confirmation.append(totalDiv, confirmLink);
+confirmLink.append(confirmBtn);
+
 
 // modal window
 const closePopupBtn = document.querySelector(".btn-close");

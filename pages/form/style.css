@@ -1,0 +1,150 @@
+@import url(../../style/fonts.css);
+html {
+  color: #2b2b2b;
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #f3f3f3;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  background-color: #a8a8a8;
+}
+
+input:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+input:focus {
+  background-color: white;
+}
+
+input[date] {
+  color: yellow;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #848480;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #585858;
+}
+
+.title {
+  color: #f3f3f3;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.form-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+.box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-confirm {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  transition: box-shadow .2s,-webkit-transform .1s,transform .1s;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.btn-confirm:focus-visible {
+  -webkit-box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+          box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  -webkit-transition: -webkit-box-shadow .2s;
+  transition: -webkit-box-shadow .2s;
+  transition: box-shadow .2s;
+  transition: box-shadow .2s, -webkit-box-shadow .2s;
+}
+
+.btn-confirm:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.btn-confirm:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

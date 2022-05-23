@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../style/normolize.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Arimo'>
+  <link rel="stylesheet" href="../../assets/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <title>book-shop order</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <form action="/" class="form">
+        <div class="form-item name">
+          <h2 class="title">Shipping details</h2>
+          <div class="box">
+            <label for="name">First</label>
+            <input type="text" name="name" id="name" placeholder="Name" minlength="4" pattern="[a-zA-Z]{3,15}"
+              required />
+          </div>
+          <div class="box">
+            <label for="surname">Last</label>
+            <input type="text" name="surname" id="surname" placeholder="Surname" minlength="5" pattern="[a-zA-Z]{5,15}"
+              title="5 to 15 letters" required />
+          </div>
+          <div class="box">
+            <label for="delivery-date">Delivery date</label>
+            <input type="date" name="delivery-date" id="delivery-date" placeholder="date" minlength="4" required />
+          </div>
+        </div>
+        <div class="form-item adress">
+          <h2 class="title">Adress</h3>
+          <div class="box">
+            <label for="house-number">Street </label>
+            <input type="text" name="street" id="street" placeholder="street" pattern="^[a-zA-Z0-9]+$" required />
+          </div>
+          <div class="box">
+            <label for="house-number">House number </label>
+            <input type="number" name="street" id="house-number" placeholder="house number" pattern="[0-9 _-]" required />
+          </div>
+          <div class="box">
+            <label for="flat-number">Flat number</label>
+            <input type="number" name="street" id="flat-number" placeholder="flat number" pattern="^[0-9]" required />
+          </div>
+        </div>
+        
+        <div class="form-itempayment">
+          <h2 class="title">Payment Information</h2>
+          <input type="radio" value="none" id="payment-card" name="payment" checked />
+          <label for="male" class="radio">Card</label>
+          <input type="radio" value="none" id="payment-cash" name="payment" />
+          <label for="payment-cash" class="radio">Cash</label>
+        </div>
+        
+        <div class="gift">
+          <h2>Choose 2 gifts (optional): </h2>
+          <input type="checkbox" id="option1" name="option1" value="pack as a gift">
+          <label for="option1"> pack as a gift</label><br>
+          <input type="checkbox" id="option2" name="option2" value="add postcard">
+          <label for="option2"> add postcard</label><br>
+          <input type="checkbox" id="option3" name="option3" value="provide 2% discount to the next time">
+          <label for="option3"> provide 2% discount to the next time</label><br>
+          <input type="checkbox" id="option4" name="option3" value="branded pen or pencil">
+          <label for="vehicle4"> branded pen or pencil</label><br>
+        </div>
+        <div class="btn-block">
+          <button class=".btn-confirm" type="submit">PURCHASE</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
