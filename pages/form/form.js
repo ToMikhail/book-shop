@@ -62,11 +62,11 @@ const submitBtn = document.querySelector(".btn-confirm");
 // });
 
 // 2 option
-FORM.addEventListener("keyup", () => {
+FORM.addEventListener("keyup", (e) => {
+  console.log(e.target);
   for (let i = 0; i < requiredElements.length; i++) {
-    console.log(requiredElements[i].checkValidity() == false);
     if (requiredElements[i].checkValidity() == false) {
-      // submitBtn.disabled = true;
+      submitBtn.disabled = 'disabled';
       return;
     }
   }
