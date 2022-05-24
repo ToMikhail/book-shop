@@ -44,6 +44,26 @@ input:invalid {
   border-color: rgb(232, 125, 125);
 }
 
+input + span {
+  position: relative;
+}
+
+input + span::before {
+  position: absolute;
+  right: 10px;
+  top: -30px;
+}
+
+input:invalid + span::before {
+  content: '✖';
+  color: red;
+}
+
+input:valid + span::before {
+  content: '✓';
+  color: green;
+}
+
 input[date] {
   color: yellow;
 }

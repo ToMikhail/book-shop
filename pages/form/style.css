@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(../../style/fonts.css);
 html {
   color: #2b2b2b;
@@ -31,6 +32,26 @@ input:required:valid {
 
 input:invalid {
   border-color: #e87d7d;
+}
+
+input + span {
+  position: relative;
+}
+
+input + span::before {
+  position: absolute;
+  right: 10px;
+  top: -30px;
+}
+
+input:invalid + span::before {
+  content: '✖';
+  color: red;
+}
+
+input:valid + span::before {
+  content: '✓';
+  color: green;
 }
 
 input[date] {
