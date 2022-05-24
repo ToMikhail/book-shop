@@ -23,19 +23,22 @@
           <div class="name-container">
             <div class="box">
               <label for="name">First</label>
-              <input type="text" data-name="first" name="name" id="name" placeholder="Name" minlength="4" pattern="[a-zA-Z]{3,30}"
-                required />
+              <input type="text" data-name="first" name="name" id="name" placeholder="Name" minlength="4"
+                pattern="[a-zA-Z]{3,30}" required />
+              <span></span>
             </div>
             <div class="box">
               <label for="surname">Last</label>
               <input type="text" data-name="last" name="surname" id="surname" placeholder="Surname" minlength="5"
                 pattern="[a-zA-Z]{4,30}" title="5 to 15 letters" required />
+              <span></span>
             </div>
           </div>
 
           <div class="box">
             <label for="delivery-date">Delivery date</label>
-            <input type="date" name="delivery-date" data-delivery="delivery" id="delivery-date" placeholder="date" required />
+            <input type="date" name="delivery-date" data-delivery="delivery" id="delivery-date" placeholder="date"
+              required />
           </div>
         </div>
         <div class="form-item adress">
@@ -44,17 +47,20 @@
               <label for="house-number">Street </label>
               <input type="text" data-adress="street" name="street" id="street" placeholder="street" minlength="5"
                 pattern="[a-zA-Z0-9]{4,50}" required />
+              <span></span>
             </div>
             <div class="adress-number">
               <div class="box">
                 <label for="house-number">House number </label>
-                <input type="number" data-adress="house" name="house-number" id="house-number" placeholder="house number" min="0"
-                  pattern="[0-9]" required />
+                <input type="number" data-adress="house" name="house-number" id="house-number"
+                  placeholder="house number" min="0" pattern="[0-9]" required />
+                <span></span>
               </div>
               <div class="box">
                 <label for="flat-number">Flat number</label>
                 <input type="text" data-adress="flat" name="flat-number" id="flat-number" placeholder="flat number"
                   pattern='^\d+(?:-\d+)*$' required />
+                <span></span>
               </div>
             </div>
         </div>

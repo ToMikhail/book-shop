@@ -48,6 +48,7 @@ const submitBtn = document.querySelector(".btn-confirm");
 
 FORM.addEventListener("keydown", () => {
   for (let i = 0; i < requiredElements.length; i++) {
+    console.log(requiredElements[i].classList.contains('valid'));
     if (requiredElements[i].value.length == 0) {
       // submitBtn.disabled = true;
       console.log("fuck");
