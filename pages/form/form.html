@@ -17,44 +17,44 @@
 <body>
   <div class="container">
     <div class="main">
-      <form action="/" class="form">
+      <form onsubmit="submitForm(event)" class="form">
         <div class="form-item name">
           <h2 class="title">Shipping details</h2>
           <div class="name-container">
             <div class="box">
               <label for="name">First</label>
-              <input type="text" name="name" id="name" placeholder="Name" minlength="4" pattern="[a-zA-Z]{3,30}"
+              <input type="text" data-name="first" name="name" id="name" placeholder="Name" minlength="4" pattern="[a-zA-Z]{3,30}"
                 required />
             </div>
             <div class="box">
               <label for="surname">Last</label>
-              <input type="text" name="surname" id="surname" placeholder="Surname" minlength="5"
+              <input type="text" data-name="last" name="surname" id="surname" placeholder="Surname" minlength="5"
                 pattern="[a-zA-Z]{4,30}" title="5 to 15 letters" required />
             </div>
           </div>
 
           <div class="box">
             <label for="delivery-date">Delivery date</label>
-            <input type="date" name="delivery-date" id="delivery-date" placeholder="date" required />
+            <input type="date" name="delivery-date" data-delivery="delivery" id="delivery-date" placeholder="date" required />
           </div>
         </div>
         <div class="form-item adress">
           <h2 class="title">Adress</h3>
             <div class="box">
               <label for="house-number">Street </label>
-              <input type="text" name="street" id="street" placeholder="street" minlength="5" pattern="[a-zA-Z0-9]{4,50}" required />
+              <input type="text" data-adress="street" name="street" id="street" placeholder="street" minlength="5"
+                pattern="[a-zA-Z0-9]{4,50}" required />
             </div>
             <div class="adress-number">
               <div class="box">
                 <label for="house-number">House number </label>
-                <input type="number" name="house-number" id="house-number" placeholder="house number" min="0" pattern="[0-9]"
-                  required />
+                <input type="number" data-adress="house" name="house-number" id="house-number" placeholder="house number" min="0"
+                  pattern="[0-9]" required />
               </div>
               <div class="box">
                 <label for="flat-number">Flat number</label>
-
-                <input type="text" name="flat-number" id="flat-number" placeholder="flat number"  pattern = '^\d+(?:-\d+)*$'
-                  required />
+                <input type="text" data-adress="flat" name="flat-number" id="flat-number" placeholder="flat number"
+                  pattern='^\d+(?:-\d+)*$' required />
               </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
           <h2 class="title">Payment Information</h2>
           <input type="radio" value="card" id="payment-card" name="payment" required checked />
           <label for="male" class="radio">Card</label>
-          <input type="radio" value="cash" id="payment-cash" name="payment" required/>
+          <input type="radio" value="cash" id="payment-cash" name="payment" required />
           <label for="payment-cash" class="radio">Cash</label>
         </div>
 
@@ -79,11 +79,20 @@
           <label for="vehicle4"> branded pen or pencil</label><br>
         </div>
         <div class="btn-block">
-          <button class="btn-confirm" type="submit" disabled>PURCHASE</button>
+          <button class="btn-confirm" type="submit" >PURCHASE</button>
         </div>
       </form>
     </div>
   </div>
+  </div>
+  <div class="popup">
+    <div class="popup-container">
+      <div class="popup-content">
+        <h2 class="popup-title">The order created!</h2>
+        <p class='popup-text'></p>
+        <button id="btn-popup" class="btn-confirm">ok</button>
+      </div>
+    </div>
   </div>
   <script src="./form.js"></script>
 </body>

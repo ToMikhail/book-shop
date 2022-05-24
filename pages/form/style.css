@@ -12,7 +12,9 @@ input {
   background-color: #a8a8a8;
 }
 
-input:active, :hover, :focus {
+input:active,
+:hover,
+:focus {
   outline: 0;
   outline-offset: 0;
 }
@@ -129,7 +131,7 @@ input[date] {
 }
 
 .btn-confirm {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #222222;
   border-radius: 8px;
   -webkit-box-sizing: border-box;
@@ -137,7 +139,7 @@ input[date] {
   color: #222222;
   cursor: pointer;
   display: inline-block;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -149,7 +151,7 @@ input[date] {
   text-decoration: none;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
-  transition: box-shadow .2s,-webkit-transform .1s,transform .1s;
+  transition: box-shadow 0.2s, -webkit-transform 0.1s, transform 0.1s;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
@@ -160,23 +162,63 @@ input[date] {
 .btn-confirm:focus-visible {
   -webkit-box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
           box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-  -webkit-transition: -webkit-box-shadow .2s;
-  transition: -webkit-box-shadow .2s;
-  transition: box-shadow .2s;
-  transition: box-shadow .2s, -webkit-box-shadow .2s;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
 }
 
 .btn-confirm:active {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-color: #000000;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
 .btn-confirm:disabled {
-  border-color: #DDDDDD;
-  color: #DDDDDD;
+  border-color: #dddddd;
+  color: #dddddd;
   cursor: not-allowed;
   opacity: 1;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  z-index: 1;
+}
+
+.popup .popup-container {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+  margin: 15% auto;
+  padding: 40px;
+  border: 1px solid #848480;
+  border-radius: 10px;
+  background-color: #585858;
+}
+
+.popup .popup-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup.visible {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
