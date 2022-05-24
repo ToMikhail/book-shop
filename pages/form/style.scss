@@ -21,7 +21,9 @@ input {
   background-color: $color-font;
 }
 
-input:active, :hover, :focus {
+input:active,
+:hover,
+:focus {
   outline: 0;
   outline-offset: 0;
 }
@@ -78,8 +80,7 @@ input[date] {
 }
 
 .name {
-
-  .name-container{
+  .name-container {
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -94,7 +95,7 @@ input[date] {
 .box {
   display: flex;
   flex-direction: column;
-  
+
   label {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -106,14 +107,14 @@ input[date] {
 }
 
 .btn-confirm {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #222222;
   border-radius: 8px;
   box-sizing: border-box;
   color: #222222;
   cursor: pointer;
   display: inline-block;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -124,7 +125,7 @@ input[date] {
   text-align: center;
   text-decoration: none;
   touch-action: manipulation;
-  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s, transform 0.1s;
   user-select: none;
   -webkit-user-select: none;
   width: auto;
@@ -132,18 +133,53 @@ input[date] {
 
 .btn-confirm:focus-visible {
   box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-  transition: box-shadow .2s;
+  transition: box-shadow 0.2s;
 }
 
 .btn-confirm:active {
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-color: #000000;
-  transform: scale(.95);
+  transform: scale(0.95);
 }
 
 .btn-confirm:disabled {
-  border-color: #DDDDDD;
-  color: #DDDDDD;
+  border-color: #dddddd;
+  color: #dddddd;
   cursor: not-allowed;
   opacity: 1;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 1;
+
+  .popup-container {
+    width: 300px;
+    height: 200px;
+
+    background-color: red;
+    margin: 15% auto;
+    padding: 40px;
+    border: 1px solid #848480;
+    border-radius: 10px;
+    background-color: $color;
+  }
+
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+  }
+}
+
+.popup.visible {
+  display: block;
 }

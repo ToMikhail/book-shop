@@ -48,12 +48,37 @@ const submitBtn = document.querySelector(".btn-confirm");
 
 FORM.addEventListener("keydown", () => {
   for (let i = 0; i < requiredElements.length; i++) {
-    if (requiredElements[i].value.length === 0) {
+    if (requiredElements[i].value.length == 0) {
       // submitBtn.disabled = true;
-      console.log('fuck');
-      return
+      console.log("fuck");
+      return;
     }
   }
-  console.log('hr');
+  console.log("hr");
   submitBtn.disabled = false;
 });
+
+//poup
+const popup = document.querySelector(".popup");
+submitBtn.addEventListener("click", () => {
+  let popupText = document.querySelector(".popup-text");
+  let street = document.querySelector("[data-adress='street']").value;
+  let house = document.querySelector("[data-adress='house']").value;
+  let flat = document.querySelector("[data-adress='flat']").value;
+  let firstName = document.querySelector("[data-name='first']").value;
+  let lastName = document.querySelector("[data-name='last']").value;
+  popupText.textContent = `The delivery address is ${street} street house ${house} flat ${flat}. Customer ${firstName} ${lastName}.`;
+  popup.classList.add('visible')
+});
+
+console.log("popup: ", popup);
+
+function submitForm(event){
+  event.preventDefault();
+}
+
+const popUpBtn =document.querySelector("#btn-popup")
+
+popUpBtn.addEventListener("click", () => {
+  popup.classList.remove('visible')
+})
