@@ -29,7 +29,6 @@ checkboxItems.forEach((element) => {
       for (let i = 0; i < checkboxItems.length; i++) {
         if (checkboxItems[i].checked === false) {
           checkboxItems[i].disabled = true;
-          console.log("hek");
         }
       }
     } else {
@@ -40,20 +39,21 @@ checkboxItems.forEach((element) => {
   });
 });
 
-const requiredElements = document.querySelector(".form").querySelectorAll("[required]");
-
+const requiredElements = document
+  .querySelector(".form")
+  .querySelectorAll("[required]");
+// console.log(requiredElements[0].value.length === 0);
 const FORM = document.querySelector(".form");
 const submitBtn = document.querySelector(".btn-confirm");
 
-FORM.addEventListener("keyup", () => {
+FORM.addEventListener("keydown", () => {
   for (let i = 0; i < requiredElements.length; i++) {
-    
-    if (requiredElements[i].value.length > 0) {
-      console.log(requiredElements[i].value.length);
-      
-    } else {
-      submitBtn.disabled = true
+    if (requiredElements[i].value.length === 0) {
+      // submitBtn.disabled = true;
+      console.log('fuck');
+      return
     }
   }
-  // submitBtn.disabled = false
+  console.log('hr');
+  submitBtn.disabled = false;
 });
