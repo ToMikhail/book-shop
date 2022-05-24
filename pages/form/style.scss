@@ -18,7 +18,9 @@ html {
 input {
   padding: 10px;
   border: none;
-  background-color: $color-font;
+  background-color: #dfdfdf;
+  border: solid 2px $color-font;
+  border-radius: 5px;
 }
 
 input:active,
@@ -33,12 +35,14 @@ input:focus {
 }
 
 input:required:valid {
-  background-color: rgb(170, 230, 170);
+  border-color: rgb(170, 230, 170); 
+  // background-color: rgb(239, 255, 239);
+
 }
 
-// input:invalid {
-//   background-color: rgb(232, 125, 125);
-// }
+input:invalid {
+  border-color: rgb(232, 125, 125);
+}
 
 input[date] {
   color: yellow;

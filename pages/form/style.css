@@ -9,7 +9,9 @@ html {
 input {
   padding: 10px;
   border: none;
-  background-color: #a8a8a8;
+  background-color: #dfdfdf;
+  border: solid 2px #a8a8a8;
+  border-radius: 5px;
 }
 
 input:active,
@@ -24,7 +26,11 @@ input:focus {
 }
 
 input:required:valid {
-  background-color: #aae6aa;
+  border-color: #aae6aa;
+}
+
+input:invalid {
+  border-color: #e87d7d;
 }
 
 input[date] {
