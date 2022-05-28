@@ -197,7 +197,17 @@ for (const book of books) {
 }
 
 function dragStart(e) {
-  e.dataTransfer.setData("text/plain", e.target.innerHTML);
+  // console.log('el', e.target);
+  if(e.target.classList.contains("book-item")) {
+    console.log('hell');
+    e.dataTransfer.setData("text/plain", e.target.innerHTML);
+  } else {
+    console.log(e.target.closest(".book-item"));
+    console.log('fuck');
+    e.dataTransfer.setData("text/plain", e.target.closest(".book-item").innerHTML);
+  }
+  // e.dataTransfer.setData("text/plain", e.target.innerHTML);
+
 }
 
 function dragOver(e) {

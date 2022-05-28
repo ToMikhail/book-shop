@@ -147,6 +147,7 @@ html {
   display: flex;
   gap: 20px;
   color: #e0dfdc;
+  cursor: pointer;
 }
 
 .book-item .card-item-img {
