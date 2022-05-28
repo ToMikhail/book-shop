@@ -58,6 +58,7 @@ bookItem.className = "book-item";
 
 function addBookItem(element) {
   let bookItem = document.createElement("div");
+  bookItem.setAttribute('draggable', 'true')
   bookItem.className = "book-item";
   bookItem.innerHTML = `<img class="card-item-img" src="${element.imageLink}"/>
   <div class="card-item-content-wrapper">
@@ -88,7 +89,6 @@ const confirmLink = document.createElement("a");
 confirmLink.className = "confirm-link";
 confirmLink.href = "../form/form.html";
 confirmLink.setAttribute('href', "../form/form.html")
-console.log('confirmLink.href: ', confirmLink.href);
 const confirmBtn = document.createElement("button");
 confirmBtn.className = "btn-confirm";
 confirmBtn.textContent = "Confirm order";
@@ -98,7 +98,7 @@ totalDiv.textContent = `Total: $${total}`;
 const confirmation = document.createElement("div");
 confirmation.className = "confirmation";
 
-basket.append(basketTitle, orderList, confirmation);
+basket.append(basketTitle, confirmation, orderList);
 confirmation.append(totalDiv, confirmLink);
 confirmLink.append(confirmBtn);
 
@@ -179,4 +179,67 @@ function addOrderItem(author, title, imgSrc, price) {
    </div>`;
 
   return orderItem;
+}
+
+
+//drag and drop
+const books = document.querySelectorAll(".book-item");
+
+
+orderList.addEventListener('drop', drop)
+
+orderList.addEventListener('dragover', dragOver);
+orderList.addEventListener('dragenter', dragEnter);
+
+for (const book of books) {
+  book.addEventListener('dragstart', dragStart);
+
+}
+
+function dragStart(e) {
+  e.dataTransfer.setData("text/plain", e.target.innerHTML);
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+}
+
+function drop(ev) {
+  let orderItem = document.createElement('div');
+  orderItem.className = 'order-item';
+  orderItem.innerHTML = ev.dataTransfer.getData("text/plain", ev.target.innerHTML)
+  this.append(orderItem)
+  orderItem.firstChild.classList = 'order-item-img';
+  orderItem.lastChild.classList = 'order-item-content';
+  let lastChild = orderItem.lastChild;
+  let d_btn = this.querySelector('.btn-add');
+  let d_btnInfo = this.querySelector('.btn-more-info');
+  let priceElement = this.querySelector('.book-price');
+  priceElement.className = "book-price-invisible";
+  let price = +priceElement.textContent.slice(-2);
+  lastChild.removeChild(d_btn);
+  lastChild.removeChild(d_btnInfo);
+  let add_span = document.createElement('span');
+  add_span.className = 'btn-close order-item-btn-close';
+  add_span.textContent = '×'
+  lastChild.appendChild(add_span)
+
+  orderItem
+  .querySelector(".order-item-btn-close")
+  .addEventListener("click", (e) => {
+    let parent = e.target.parentElement;
+    let priceElement = parent.querySelector('.book-price-invisible');
+    let price = +priceElement.textContent.slice(-2);
+    console.log('price: ', price);
+    total = total - price;
+    totalDiv.textContent = `Total: $${total}`;
+    e.target.closest(".order-item").remove();
+  });
+
+  total += price;
+  totalDiv.textContent = `Total: $${total}`;
 }
